@@ -1,0 +1,68 @@
+<div class="container my-5">
+    <div class="card bg-light">
+        <form class="card-body" novalidate="" action="" method="" id="bootstrapForm">
+            <h1>Formulario</h1>
+            <hr>
+            <form #formUsuario="ngForm" (ngSubmit)="onSubmit()" class="row g-3 needs-validation" novalidate>
+                <div class="col-md-4 position-relative">
+                    <label class="form-label">Nombre</label>
+                    <input class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="usuario.nombre" id="exampleFormControlInput1" style="width: 18rem; margin: 0.5rem;" ngModel minlength="4" maxLength="15" required>
+                    <span *ngIf="nombre.touched && !nombre.valid">Error</span>
+                </div>
+
+                <div class="col-md-4 position-relative">
+                    <label class="form-label">Apellido</label>
+                    <input class="form-control" name="apellido" #apellido="ngModel" [(ngModel)]="usuario.apellido" id="exampleFormControlInput1" required style="width: 18rem; margin: 0.5rem;" ngModel minlength="4" maxLength="15" required>
+                    <span *ngIf="apellido.touched && !apellido.valid">Error</span>
+                </div>
+
+                <div class="col-md-3 position-relative">
+                    <label class="form-label">Edad</label>
+                    <input class="form-control" name="edad" #edad="ngModel" [(ngModel)]="usuario.edad" id="exampleFormControlInput1" required style="width: 18rem; margin: 0.5rem;" min="18" max="80" required>
+                    <span *ngIf="edad.touched && !edad.valid">Error</span>
+                </div>
+
+                <div class="col-md-4 position-relative">
+                    <label class="form-label">Celular</label>
+                    <input class="form-control" name="celular" #celular="ngModel" [(ngModel)]="usuario.celular" id="exampleFormControlInput1" required style="width: 18rem; margin: 0.5rem;" min="10" max="13" required>
+                    <span *ngIf="celular.touched && !celular.valid">Error</span>
+                </div>
+
+                <div class="col-md-4 position-relative">
+                    <label class="form-label">NickName</label>
+                    <div class="input-group has-validation">
+                        <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                        <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
+                    </div>
+                </div>
+
+                <div class="col-md-4 position-relative">
+                    <label class="form-label">Ciudad</label>
+                    <input class="form-control" name="ciudad" #ciudad="ngModel" [(ngModel)]="usuario.ciudad" id="exampleFormControlInput1" required style="width: 18rem; margin: 0.5rem;" ngModel minlength="4" maxLength="20" required>
+                    <span *ngIf="ciudad.touched && !ciudad.valid">Error</span>
+                </div>
+
+                <div class="col-md-4 position-relative">
+                    <label class="form-label">Barrio</label>
+                    <input class="form-control" name="barrio" #barrio="ngModel" [(ngModel)]="usuario.barrio" id="exampleFormControlInput1" required style="width: 18rem; margin: 0.5rem;" ngModel minlength="4" maxLength="20" required>
+                    <span *ngIf="barrio.touched && !barrio.valid">Error</span>
+                </div>
+
+                <div class="col-md-4 position-relative">
+                    <label for="validationTooltip04" class="form-label">Estrato</label>
+                    <select class="form-select" id="validationTooltip04" required>
+            <option selected enabled value="">1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-secondary" *ngIf="nombre.valid && apellido.valid && edad.valid && celular.valid && barrio.valid && ciudad.valid ">Datos
+            Guardados</button>
+                </div>
+            </form>
+        </form>
+    </div>
+</div>
